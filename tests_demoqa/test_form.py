@@ -24,7 +24,7 @@ def test_practice_form():
     # чекбокс
     browser.all('.custom-checkbox').element_by(have.exact_text('Sports')).click()
     # загрузка картинки
-    browser.element('#uploadPicture').send_keys(os.path.abspath('C:/Users/Alderon/MSP/test/4.jpg'))
+    browser.element('#uploadPicture').send_keys(os.path.abspath('/resourses/текст_1920-1080.jpg'))
 
     browser.element('#currentAddress').type('currentAddress')
     # последовательный выбор из выпадающих списокв
@@ -37,9 +37,6 @@ def test_practice_form():
     # ожидание 2 секунды, иначе тест не видл формы и падал
     time.sleep(2)
 
-    browser.element('[class="modal-body"]').should(have.text('Name1 LastName1'))
-    browser.element('[class="modal-body"]').should(have.text('Female'))
-    browser.element('[class="modal-body"]').should(have.text('1234567890'))
 
     # проверки
     browser.all('.table-responsive').all('tr').element(1).should(have.text('Имя Отчество'))
