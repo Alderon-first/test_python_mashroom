@@ -7,8 +7,7 @@ import os
 
 def test_practice_form():
     # заполнение формы
-    browser.open('https://demoqa.com/automation-practice-form')
-    browser.config.window_height = 1300
+    browser.open('/automation-practice-form')
     browser.element('[id="firstName"]').should(be.blank).type('Имя')
     browser.element('[id="lastName"]').should(be.blank).type('Отчество')
     browser.element('[id="userEmail"]').should(be.blank).type('test@test.ru')
@@ -37,7 +36,7 @@ def test_practice_form():
     browser.element('#submit').press_enter()
 
     # ожидание 2 секунды, иначе тест не видл формы и падал
-    time.sleep(2)
+    #time.sleep(2)
 
     # проверки
     browser.all('.table-responsive').all('tr').element(1).should(have.text('Имя Отчество'))
