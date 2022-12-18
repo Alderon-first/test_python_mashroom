@@ -1,8 +1,7 @@
 from selene import be, have
 from selene.support.shared import browser
 
-import qa_guru_python_3_7.utils.resouce_1
-import tests_demoqa.resouce
+from qa_guru_python_3_7.utils.resouce_1 import path_file
 
 
 # заполнение формы
@@ -14,9 +13,7 @@ def form_data():
     browser.element('[for="gender-radio-2"]').click()
     browser.element('[id="userNumber"]').should(be.blank).type('1234567890')
     # загрузка картинки
-    #browser.element('#uploadPicture').set_value(tests_demoqa.resouce.path_file('resource/текст_1920-1080.jpg'))
-    browser.element('#uploadPicture').set_value(qa_guru_python_3_7.utils.resouce_1.path_file(
-        '/resource/текст_1920-1080.jpg'))
+    browser.element('#uploadPicture').set_value(path_file('resource/текст_1920-1080.jpg'))
     # календарь
     browser.element('#dateOfBirthInput').click()
     browser.element('.react-datepicker__year-select [value="1990"]').click()
