@@ -41,3 +41,15 @@ def check_info():
     browser.all('.table-responsive').all('tr').element(8).should(have.text('текст_1920-1080.jpg'))
     browser.all('.table-responsive').all('tr').element(9).should(have.text('currentAddress'))
     browser.all('.table-responsive').all('tr').element(10).should(have.text('NCR Delhi'))
+
+
+def close_form():
+    browser.element('#closeLargeModal').press_enter()
+
+
+def send_form():
+    browser.element('#submit').press_enter()
+
+
+def open_page_practice_form():
+    browser.open('/automation-practice-form')
