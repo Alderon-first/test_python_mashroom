@@ -1,7 +1,10 @@
 from selene import be, have
 from selene.support.shared import browser
 
+from qa_guru_python_3_7.model.controls.chekboxes import select_chekbox
+from qa_guru_python_3_7.model.controls.datapiker import datepicker_react
 from qa_guru_python_3_7.utils.resouce_1 import path_file
+from qa_guru_python_3_7.model.controls.radio_bottom import select_radio
 
 
 # заполнение формы
@@ -10,19 +13,16 @@ def form_data():
     browser.element('[id="lastName"]').should(be.blank).type('Отчество')
     browser.element('[id="userEmail"]').should(be.blank).type('test@test.ru')
     # радиоботом
-    browser.element('[for="gender-radio-2"]').click()
+    select_radio('[name=gender]', 'Female')
     browser.element('[id="userNumber"]').should(be.blank).type('1234567890')
     # загрузка картинки
     browser.element('#uploadPicture').set_value(path_file('resource/текст_1920-1080.jpg'))
     # календарь
-    browser.element('#dateOfBirthInput').click()
-    browser.element('.react-datepicker__year-select [value="1990"]').click()
-    browser.element('.react-datepicker__month-select [value="11"]').click()
-    browser.element('.react-datepicker__day--002').click()
+    datepicker_react('#dateOfBirthInput', year='1990', month='11', day='02')
     # выбор из подобранных вариантов
     browser.element('#subjectsInput').type('Arts').press_enter()
     # чекбокс
-    browser.all('.custom-checkbox').element_by(have.exact_text('Sports')).click()
+    select_chekbox('.custom-checkbox', 'Sports')
     # последовательный выбор из выпадающих списокв
     browser.element('#react-select-3-input').type('NCR').press_enter()
     browser.element('#react-select-4-input').type('Delhi').press_enter()
