@@ -31,18 +31,18 @@ def data_fill(firstName, lastName, userEmail, gender, Number,  file, year, month
     browser.element('#currentAddress').type(Address)
 
 
-def check_info():
+def check_info(firstName, lastName, userEmail, gender, Number,  file, date, Subjects, Hobbies, State, City, Address):
     # проверки
-    browser.all('.table-responsive').all('tr').element(1).should(have.text('Имя Отчество'))
-    browser.all('.table-responsive').all('tr').element(2).should(have.text('test@test.ru'))
-    browser.all('.table-responsive').all('tr').element(3).should(have.text('Female'))
-    browser.all('.table-responsive').all('tr').element(4).should(have.text('1234567890'))
-    browser.all('.table-responsive').all('tr').element(5).should(have.text('02 December,1990'))
-    browser.all('.table-responsive').all('tr').element(6).should(have.text('Arts'))
-    browser.all('.table-responsive').all('tr').element(7).should(have.text('Sports'))
-    browser.all('.table-responsive').all('tr').element(8).should(have.text('текст_1920-1080.jpg'))
-    browser.all('.table-responsive').all('tr').element(9).should(have.text('currentAddress'))
-    browser.all('.table-responsive').all('tr').element(10).should(have.text('NCR Delhi'))
+    # browser.all('.table-responsive').all('tr').element(1).should(have.text(f'{firstName} + " " + {lastName}'))
+    browser.all('.table-responsive').all('tr').element(2).should(have.text(userEmail))
+    browser.all('.table-responsive').all('tr').element(3).should(have.text(gender))
+    browser.all('.table-responsive').all('tr').element(4).should(have.text(Number))
+    browser.all('.table-responsive').all('tr').element(5).should(have.text(date))
+    browser.all('.table-responsive').all('tr').element(6).should(have.text(Subjects))
+    browser.all('.table-responsive').all('tr').element(7).should(have.text(Hobbies))
+    browser.all('.table-responsive').all('tr').element(8).should(have.text(file))
+    browser.all('.table-responsive').all('tr').element(9).should(have.text(Address))
+    # browser.all('.table-responsive').all('tr').element(10).should(have.text(f'{State} + " " + {City}'))
 
 
 def close_form():
