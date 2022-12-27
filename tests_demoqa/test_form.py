@@ -1,5 +1,4 @@
 from qa_guru_python_3_7.model.pages import practice_form
-from qa_guru_python_3_7.model.pages.practice_form import check_info, close_form, send_form, open_page_practice_form
 
 
 def test_practice_form():
@@ -23,5 +22,3 @@ def test_practice_form():
                              City='Delhi', Address='currentAddress')
     # закрыть форму
     practice_form.close_form()
-
-
