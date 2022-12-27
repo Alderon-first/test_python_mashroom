@@ -3,6 +3,7 @@ from selene.support.shared import browser
 
 from qa_guru_python_3_7.model.controls.chekboxes import select_chekbox
 from qa_guru_python_3_7.model.controls.datapiker import datepicker_react
+from qa_guru_python_3_7.model.controls.dropdown import dropdown_react
 from qa_guru_python_3_7.utils.resouce_1 import path_file
 from qa_guru_python_3_7.model.controls.radio_bottom import select_radio
 
@@ -24,8 +25,8 @@ def form_data():
     # чекбокс
     select_chekbox('.custom-checkbox', 'Sports')
     # последовательный выбор из выпадающих списокв
-    browser.element('#react-select-3-input').type('NCR').press_enter()
-    browser.element('#react-select-4-input').type('Delhi').press_enter()
+    dropdown_react('3', 'NCR')
+    dropdown_react('4', 'Delhi')
     browser.element('#currentAddress').type('currentAddress')
 
 
