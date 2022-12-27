@@ -9,25 +9,26 @@ from qa_guru_python_3_7.model.controls.radio_bottom import select_radio
 
 
 # заполнение формы
-def form_data():
-    browser.element('[id="firstName"]').should(be.blank).type('Имя')
-    browser.element('[id="lastName"]').should(be.blank).type('Отчество')
-    browser.element('[id="userEmail"]').should(be.blank).type('test@test.ru')
+def data_fill(firstName, lastName, userEmail, gender, Number,  file, year, month,
+              day, Subjects, Hobbies, State, City, Address ):
+    browser.element('[id="firstName"]').should(be.blank).type(firstName)
+    browser.element('[id="lastName"]').should(be.blank).type(lastName)
+    browser.element('[id="userEmail"]').should(be.blank).type(userEmail)
     # радиоботом
-    select_radio('[name=gender]', 'Female')
-    browser.element('[id="userNumber"]').should(be.blank).type('1234567890')
+    select_radio('[name=gender]', gender)
+    browser.element('[id="userNumber"]').should(be.blank).type(Number)
     # загрузка картинки
-    browser.element('#uploadPicture').set_value(path_file('resource/текст_1920-1080.jpg'))
+    browser.element('#uploadPicture').set_value(path_file(file))
     # календарь
-    datepicker_react('#dateOfBirthInput', year='1990', month='11', day='02')
+    datepicker_react('#dateOfBirthInput', year=year, month=month, day=day)
     # выбор из подобранных вариантов
-    browser.element('#subjectsInput').type('Arts').press_enter()
+    browser.element('#subjectsInput').type(Subjects).press_enter()
     # чекбокс
-    select_chekbox('.custom-checkbox', 'Sports')
+    select_chekbox('.custom-checkbox', Hobbies)
     # последовательный выбор из выпадающих списокв
-    dropdown_react('3', 'NCR')
-    dropdown_react('4', 'Delhi')
-    browser.element('#currentAddress').type('currentAddress')
+    dropdown_react('3', State)
+    dropdown_react('4', City)
+    browser.element('#currentAddress').type(Address)
 
 
 def check_info():

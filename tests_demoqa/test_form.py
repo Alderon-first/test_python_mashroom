@@ -6,7 +6,10 @@ def test_practice_form():
     practice_form.open_page_practice_form()
 
     # заполнение формы
-    practice_form.form_data()
+    practice_form.data_fill(firstName='Имя', lastName='Отчество',
+                            userEmail='test@test.ru', gender='Female',Number='1234567890',
+                            file='resource/текст_1920-1080.jpg', year='1990', month='11', day='02',
+                            Subjects='Arts', Hobbies='Sports', State='NCR', City='Delhi', Address='currentAddress')
 
     # отправка формы (нажать на кнопку, проскролив до нее)
     practice_form.send_form()
