@@ -1,8 +1,8 @@
 from selene.support.shared import browser
 
 
-def datepicker_react(*, year, month, day):
-    browser.element('#dateOfBirthInput').click()
+def datepicker_react(selector, *, year, month, day):
+    browser.element(selector).click()
     browser.element('.react-datepicker__month-select').click()
     browser.element(f'[value="{month}"]').click()
     browser.element('.react-datepicker__year-select').click()
