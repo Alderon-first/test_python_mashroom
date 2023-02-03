@@ -55,7 +55,6 @@ class PracticePage:
         browser.all('.table-responsive').all('tr').element(9).should(have.text(user.address))
         browser.all('.table-responsive').all('tr').element(10).should(have.text(f'{user.state} {user.city}'))
 
-
     def close_form(self):
         browser.element('#closeLargeModal').press_enter()
 
