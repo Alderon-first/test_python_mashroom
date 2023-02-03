@@ -2,12 +2,12 @@ from selene import be, have
 from selene.support.shared import browser
 
 from qa_guru_python_3_7.model.controls.chekboxes import select_chekbox
-from qa_guru_python_3_7.model.controls.datapiker import datepicker_react_input, datepicker_birthday_format
 from qa_guru_python_3_7.model.controls.dropdown import dropdown_react
 from qa_guru_python_3_7.utils.resource import path_file
 from qa_guru_python_3_7.model.controls.radio_bottom import select_radio
 
 from qa_guru_python_3_7.model.data.user import User
+from qa_guru_python_3_7.model.controls.datapiker import Birthday
 
 
 class PracticePage:
@@ -25,7 +25,8 @@ class PracticePage:
         # загрузка картинки
         browser.element('#uploadPicture').set_value(path_file(user.file))
         # календарь
-        datepicker_react_input('#dateOfBirthInput', year=user.year, month=user.month, day=user.day)
+        d = Birthday('#dateOfBirthInput', year=user.year, month=user.month, day=user.day)
+        d.datepicker_react_input()
         # выбор из подобранных вариантов
         browser.element('#subjectsInput').type(user.subject).press_enter()
         # чекбокс
@@ -41,8 +42,8 @@ class PracticePage:
         browser.all('.table-responsive').all('tr').element(2).should(have.text(user.email))
         browser.all('.table-responsive').all('tr').element(3).should(have.text(user.gender))
         browser.all('.table-responsive').all('tr').element(4).should(have.text(user.phone))
-        browser.all('.table-responsive').all('tr').element(5).should(have.text(datepicker_birthday_format(
-         '.table-responsive', year=user.year, month=user.month, day=user.day)))
+        d = Birthday('#dateOfBirthInput', year=user.year, month=user.month, day=user.day)
+        browser.all('.table-responsive').all('tr').element(5).should(have.text(d.datepicker_birthday_format()))
         browser.all('.table-responsive').all('tr').element(6).should(have.text(user.subject))
         browser.all('.table-responsive').all('tr').element(7).should(have.text(user.hobby))
         browser.all('.table-responsive').all('tr').element(8).should(have.text(user.file.split('/')[-1],))
