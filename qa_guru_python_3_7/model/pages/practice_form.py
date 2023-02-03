@@ -1,14 +1,14 @@
 from selene import be, have
 from selene.support.shared import browser
 
-from qa_guru_python_3_7.model.controls.chekboxes import select_chekbox
-from qa_guru_python_3_7.model.controls.dropdown import dropdown_react
+
 from qa_guru_python_3_7.utils.resource import path_file
 from qa_guru_python_3_7.model.controls.radio_bottom import select_radio
 
 from qa_guru_python_3_7.model.data.user import User
 from qa_guru_python_3_7.model.controls.datapiker import Birthday
 from qa_guru_python_3_7.model.controls.chekboxes import Hobby
+from qa_guru_python_3_7.model.controls.dropdown import Drop
 
 
 class PracticePage:
@@ -34,8 +34,10 @@ class PracticePage:
         h = Hobby('.custom-checkbox', user.hobby)
         h.hobby()
         # последовательный выбор из выпадающих списокв
-        dropdown_react('3', user.state)
-        dropdown_react('4', user.city)
+        downstate = Drop('3', user.state)
+        downstate.select()
+        downcity = Drop('4', user.city)
+        downcity.select()
         browser.element('#currentAddress').type(user.address)
 
     def check_info(self, user: User):
