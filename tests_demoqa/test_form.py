@@ -6,18 +6,15 @@ def test_practice_form():
 
     practice_form.open_page_practice_form()
 
-    # заполнение формы
-    practice_form.data_fill(user)
+    practice_form.data_fill(user)# заполнение формы
 
-    # отправка формы (нажать на кнопку, проскролив до нее)
-    practice_form.send_form()
+    practice_form.send_form()# отправка формы (нажать на кнопку, проскролив до нее)
 
-    # ожидание 2 секунды, иначе тест не видл формы и падал
-    # time.sleep(2)
+    # time.sleep(2)  # ожидание 2 секунды, иначе тест не видл формы и падал
 
-    practice_form.check_info(user)
-    # закрыть форму
-    practice_form.close_form()
+    practice_form.check_info(user)# проверка данных
+
+    practice_form.close_form()# закрыть форму
 
 
 practice_form = PracticePage()

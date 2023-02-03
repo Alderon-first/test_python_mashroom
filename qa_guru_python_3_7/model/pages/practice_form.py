@@ -8,6 +8,7 @@ from qa_guru_python_3_7.model.controls.radio_bottom import select_radio
 
 from qa_guru_python_3_7.model.data.user import User
 from qa_guru_python_3_7.model.controls.datapiker import Birthday
+from qa_guru_python_3_7.model.controls.chekboxes import Hobby
 
 
 class PracticePage:
@@ -30,7 +31,8 @@ class PracticePage:
         # выбор из подобранных вариантов
         browser.element('#subjectsInput').type(user.subject).press_enter()
         # чекбокс
-        select_chekbox('.custom-checkbox', user.hobby)
+        h = Hobby('.custom-checkbox', user.hobby)
+        h.hobby()
         # последовательный выбор из выпадающих списокв
         dropdown_react('3', user.state)
         dropdown_react('4', user.city)
