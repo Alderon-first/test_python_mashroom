@@ -2,6 +2,7 @@ from selene import have
 from selene.support.shared import browser
 
 
+
 class Hobby:
     def __init__(self, selector, value):
         self.selector = selector
