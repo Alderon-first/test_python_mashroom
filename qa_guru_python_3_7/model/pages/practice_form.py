@@ -2,7 +2,7 @@ from selene import be, have
 from selene.support.shared import browser
 
 from qa_guru_python_3_7.model.controls.chekboxes import select_chekbox
-from qa_guru_python_3_7.model.controls.datapiker import datepicker_react
+from qa_guru_python_3_7.model.controls.datapiker import datepicker_react_input, datepicker_birthday_format
 from qa_guru_python_3_7.model.controls.dropdown import dropdown_react
 from qa_guru_python_3_7.utils.resource import path_file
 from qa_guru_python_3_7.model.controls.radio_bottom import select_radio
@@ -25,7 +25,7 @@ class PracticePage:
         # загрузка картинки
         browser.element('#uploadPicture').set_value(path_file(user.file))
         # календарь
-        datepicker_react('#dateOfBirthInput', year=user.year, month=user.month, day=user.day)
+        datepicker_react_input('#dateOfBirthInput', year=user.year, month=user.month, day=user.day)
         # выбор из подобранных вариантов
         browser.element('#subjectsInput').type(user.subject).press_enter()
         # чекбокс
@@ -37,16 +37,18 @@ class PracticePage:
 
     def check_info(self, user: User):
         # проверки
-        # browser.all('.table-responsive').all('tr').element(1).should(have.text(f'{firstName} + " " + {lastName}'))
+        browser.all('.table-responsive').all('tr').element(1).should(have.text(f'{user.first_name} {user.last_name}'))
         browser.all('.table-responsive').all('tr').element(2).should(have.text(user.email))
         browser.all('.table-responsive').all('tr').element(3).should(have.text(user.gender))
         browser.all('.table-responsive').all('tr').element(4).should(have.text(user.phone))
-        #browser.all('.table-responsive').all('tr').element(5).should(have.text(user.date))
+        browser.all('.table-responsive').all('tr').element(5).should(have.text(datepicker_birthday_format(
+         '.table-responsive', year=user.year, month=user.month, day=user.day)))
         browser.all('.table-responsive').all('tr').element(6).should(have.text(user.subject))
         browser.all('.table-responsive').all('tr').element(7).should(have.text(user.hobby))
-        browser.all('.table-responsive').all('tr').element(8).should(have.text(user.file))
+        browser.all('.table-responsive').all('tr').element(8).should(have.text(user.file.split('/')[-1],))
         browser.all('.table-responsive').all('tr').element(9).should(have.text(user.address))
-        # browser.all('.table-responsive').all('tr').element(10).should(have.text(f'{State} + " " + {City}'))
+        browser.all('.table-responsive').all('tr').element(10).should(have.text(f'{user.state} {user.city}'))
+
 
     def close_form(self):
         browser.element('#closeLargeModal').press_enter()
