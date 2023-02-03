@@ -3,12 +3,12 @@ from selene.support.shared import browser
 
 
 from qa_guru_python_3_7.utils.resource import path_file
-from qa_guru_python_3_7.model.controls.radio_bottom import select_radio
 
 from qa_guru_python_3_7.model.data.user import User
 from qa_guru_python_3_7.model.controls.datapiker import Birthday
 from qa_guru_python_3_7.model.controls.chekboxes import Hobby
 from qa_guru_python_3_7.model.controls.dropdown import Drop
+from qa_guru_python_3_7.model.controls.radio_bottom import Gender
 
 
 class PracticePage:
@@ -21,7 +21,8 @@ class PracticePage:
         browser.element('[id="lastName"]').should(be.blank).type(user.last_name)
         browser.element('[id="userEmail"]').should(be.blank).type(user.email)
         # радиоботом
-        select_radio('[name=gender]', user.gender)
+        g=Gender('[name=gender]', user.gender)
+        g.gender()
         browser.element('[id="userNumber"]').should(be.blank).type(user.phone)
         # загрузка картинки
         browser.element('#uploadPicture').set_value(path_file(user.file))
