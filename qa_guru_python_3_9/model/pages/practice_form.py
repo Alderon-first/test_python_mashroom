@@ -2,13 +2,13 @@ from selene import be, have
 from selene.support.shared import browser
 
 
-from qa_guru_python_3_7.utils.resource import path_file
+from qa_guru_python_3_9.utils.resource import path_file
 
-from qa_guru_python_3_7.model.data.user import User
-from qa_guru_python_3_7.model.controls.datapiker import Birthday
-from qa_guru_python_3_7.model.controls.chekboxes import Hobby
-from qa_guru_python_3_7.model.controls.dropdown import Drop
-from qa_guru_python_3_7.model.controls.radio_bottom import Gender
+from qa_guru_python_3_9.model.data.user import User
+from qa_guru_python_3_9.model.controls.datapiker import Birthday
+from qa_guru_python_3_9.model.controls.chekboxes import Hobby
+from qa_guru_python_3_9.model.controls.dropdown import Drop
+from qa_guru_python_3_9.model.controls.radio_bottom import Gender
 
 
 class PracticePage:
