@@ -2,6 +2,8 @@ from qa_guru_python_3_10.model.pages.practice_form import PracticePage
 from qa_guru_python_3_10.model.data.user import user
 
 
+
+
 def test_practice_form():
 
     practice_form.open_page_practice_form()
@@ -15,6 +17,7 @@ def test_practice_form():
     practice_form.check_info(user)# проверка данных
 
     practice_form.close_form()# закрыть форму
+
 
 
 practice_form = PracticePage()

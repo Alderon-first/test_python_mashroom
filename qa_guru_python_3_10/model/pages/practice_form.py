@@ -2,7 +2,7 @@ import allure
 from selene import be, have
 from selene.support.shared import browser
 
-
+from qa_guru_python_3_10.utils import attach
 from qa_guru_python_3_10.utils.resource import path_file
 
 from qa_guru_python_3_10.model.data.user import User
@@ -68,3 +68,9 @@ class PracticePage:
     @allure.step("Открыть страницу")
     def open_page_practice_form(self):
         browser.open('/automation-practice-form')
+        attach.add_screenshot(browser)
+        attach.add_logs(browser)
+        attach.add_html(browser)
+        #attach.add_video(browser)
+
+
