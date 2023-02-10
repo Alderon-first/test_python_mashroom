@@ -1,5 +1,5 @@
-from qa_guru_python_3_9.model.pages.practice_form import PracticePage
-from qa_guru_python_3_9.model.data.user import user
+from qa_guru_python_3_10.model.pages.practice_form import PracticePage
+from qa_guru_python_3_10.model.data.user import user
 
 
 def test_practice_form():
