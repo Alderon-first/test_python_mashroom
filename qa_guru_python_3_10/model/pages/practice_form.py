@@ -1,3 +1,4 @@
+import allure
 from selene import be, have
 from selene.support.shared import browser
 
@@ -15,7 +16,7 @@ class PracticePage:
     def __init__(self):
         pass
 
-    # заполнение формы
+    @allure.step("Заполнить форму")
     def data_fill(self, user: User):
         browser.element('[id="firstName"]').should(be.blank).type(user.first_name)
         browser.element('[id="lastName"]').should(be.blank).type(user.last_name)
@@ -41,6 +42,7 @@ class PracticePage:
         downcity.select()
         browser.element('#currentAddress').type(user.address)
 
+    @allure.step("Проверить данные в таблице")
     def check_info(self, user: User):
         # проверки
         browser.all('.table-responsive').all('tr').element(1).should(have.text(f'{user.first_name} {user.last_name}'))
@@ -55,11 +57,14 @@ class PracticePage:
         browser.all('.table-responsive').all('tr').element(9).should(have.text(user.address))
         browser.all('.table-responsive').all('tr').element(10).should(have.text(f'{user.state} {user.city}'))
 
+    @allure.step("Закрыть попап с таблицей")
     def close_form(self):
         browser.element('#closeLargeModal').press_enter()
 
+    @allure.step("Отправить форму")
     def send_form(self):
         browser.element('#submit').press_enter()
 
+    @allure.step("Открыть страницу")
     def open_page_practice_form(self):
         browser.open('/automation-practice-form')
