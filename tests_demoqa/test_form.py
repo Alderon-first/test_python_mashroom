@@ -3,7 +3,6 @@ from qa_guru_python_3_10.model.data.user import user
 
 
 
-
 def test_practice_form():
 
     practice_form.open_page_practice_form()

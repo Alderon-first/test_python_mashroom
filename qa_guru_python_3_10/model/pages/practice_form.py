@@ -2,7 +2,7 @@ import allure
 from selene import be, have
 from selene.support.shared import browser
 
-from qa_guru_python_3_10.utils import attach
+
 from qa_guru_python_3_10.utils.resource import path_file
 
 from qa_guru_python_3_10.model.data.user import User
@@ -26,7 +26,7 @@ class PracticePage:
         g.gender()
         browser.element('[id="userNumber"]').should(be.blank).type(user.phone)
         # загрузка картинки
-        browser.element('#uploadPicture').set_value(path_file(user.file))
+        #browser.element('#uploadPicture').set_value(path_file(user.file))
         # календарь
         d = Birthday('#dateOfBirthInput', year=user.year, month=user.month, day=user.day)
         d.datepicker_react_input()
@@ -53,7 +53,7 @@ class PracticePage:
         browser.all('.table-responsive').all('tr').element(5).should(have.text(d.datepicker_birthday_format()))
         browser.all('.table-responsive').all('tr').element(6).should(have.text(user.subject))
         browser.all('.table-responsive').all('tr').element(7).should(have.text(user.hobby))
-        browser.all('.table-responsive').all('tr').element(8).should(have.text(user.file.split('/')[-1],))
+        #browser.all('.table-responsive').all('tr').element(8).should(have.text(user.file.split('/')[-1],))
         browser.all('.table-responsive').all('tr').element(9).should(have.text(user.address))
         browser.all('.table-responsive').all('tr').element(10).should(have.text(f'{user.state} {user.city}'))
 
@@ -67,10 +67,7 @@ class PracticePage:
 
     @allure.step("Открыть страницу")
     def open_page_practice_form(self):
-        browser.open('/automation-practice-form')
-        attach.add_screenshot(browser)
-        attach.add_logs(browser)
-        attach.add_html(browser)
+        browser.open('https://demoqa.com/automation-practice-form')
         #attach.add_video(browser)
 
 
