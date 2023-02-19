@@ -17,9 +17,10 @@ class User:
     address: str
     state: str
     city: str
+    message: str
 
 
-user = User(first_name='Имя',
+user = User(first_name="Имя",
             last_name='Отчество',
             email='test@test.ru',
             gender='Female',
@@ -32,4 +33,5 @@ user = User(first_name='Имя',
             file='resource/текст_1920-1080.jpg',
             address='currentAddress',
             state='NCR',
-            city='Delhi')
+            city='Delhi',
+            message='Сообщение')

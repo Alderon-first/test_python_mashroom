@@ -1,5 +1,5 @@
 import pytest
-from qa_guru_python_3_10.utils import attach
+from qa_guru_python_3_12.utils import attach
 from selene.support.shared import browser
 from selenium.webdriver.chrome.options import Options
 import selenium
@@ -7,6 +7,7 @@ import selenium
 
 @pytest.fixture(scope="function", autouse=True)
 def browser_managment():
+    '''''
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
@@ -21,8 +22,8 @@ def browser_managment():
         command_executor="https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options)
     browser.config.driver = driver
-
-    browser.config.base_url = 'https://demoqa.com'
+    '''
+    browser.config.base_url = 'https://event-dev.pikemedia.live/'
     browser.config.window_width = 1920
     browser.config.window_height = 1080
     yield
