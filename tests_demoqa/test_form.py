@@ -12,7 +12,3 @@ def test_user_page_mid():
 practice_form = UserPage()
 
 
-@pytest.mark.skip
-def test_skipped1():
-    pass
-
