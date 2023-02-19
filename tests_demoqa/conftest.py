@@ -7,7 +7,7 @@ import selenium
 
 @pytest.fixture(scope="function", autouse=True)
 def browser_managment():
-    '''''
+
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
@@ -22,7 +22,7 @@ def browser_managment():
         command_executor="https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options)
     browser.config.driver = driver
-    '''
+
     browser.config.base_url = 'https://event-dev.pikemedia.live/'
     browser.config.window_width = 1920
     browser.config.window_height = 1080
