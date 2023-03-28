@@ -1,13 +1,12 @@
 import pytest
-from qa_guru_python_3_12.utils import attach
+from test_python_mashroom.UI.utils import attach
 from selene.support.shared import browser
-from selenium.webdriver.chrome.options import Options
-import selenium
 
 
-@pytest.fixture(scope="function", autouse=True)
+@pytest.fixture(scope="session", autouse=True)
 def browser_managment():
 
+    '''
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
@@ -22,6 +21,7 @@ def browser_managment():
         command_executor="https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options)
     browser.config.driver = driver
+    '''
 
     browser.config.base_url = 'https://event-dev.pikemedia.live/'
     browser.config.window_width = 1920

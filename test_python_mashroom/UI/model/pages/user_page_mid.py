@@ -2,7 +2,7 @@ import allure
 from selene import be, have
 from selene.support.shared import browser
 import time
-from qa_guru_python_3_12.model.data.user import user
+from test_python_mashroom.UI.model.data.user import user
 
 
 class UserPage:
@@ -11,10 +11,11 @@ class UserPage:
 
     @allure.step("Открыть страницу зрителя только с чатом")
     def open_user_page_only_chat(self):
-        browser.open('/mid/?hash=wMPmwuJU&is-only-chat=true')
+        browser.open('platform/?hash=SjSQNEEVtGDCzHUR&is-only-chat=true')
 
     @allure.step("Регистрация в чате")
     def open_chat_reg(self):
+        time.sleep(2)
         browser.element('a.text-decoration-underline.link--text').click()
         time.sleep(2)
         browser.element("//div[@id='pml-widget-app']/div[3]/div/div/div[2]/span/form/div/div/span/div/div/div/div").click()
