@@ -19,6 +19,7 @@ def example_api():
 
 @pytest.fixture(scope="session")
 def demoshop_api():
+    '''
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
@@ -33,6 +34,7 @@ def demoshop_api():
         command_executor="https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options)
     browser.config.driver = driver
+    '''
     browser.config.base_url = os.getenv("API_URL")
     browser.config.window_width = 1920
     browser.config.window_height = 1080
