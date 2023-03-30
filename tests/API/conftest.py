@@ -38,13 +38,16 @@ def demoshop_api():
     browser.config.base_url = os.getenv("STEND_URL")
     browser.config.window_width = 1920
     browser.config.window_height = 1080
-    json_data = {"email": "rebob21105@cyclesat.com", "password": "123456789QWER"}
-    resource = BaseSession(os.getenv("STEND_URL")).post('/eventor/user/login', data=json_data)
-    authorization_cookie = resource.json()
-    print(authorization_cookie)
+    json_data = '{"email":"rebob21105@cyclesat.com","password":"123456789QWER"}'
+    api_request = BaseSession((os.getenv("STEND_URL"))).post('/eventor/user/login', data=json_data)
+    response_body = api_request.json()
+    re1 = response_body.get("tokens")
+    re2 = re1.get("access")
+    print(re2)
+    heders = {"Authorization: "+ re2}
     browser.open("")
 
-    browser.driver.add_cookie({"name": "authorization", "value": authorization_cookie})
+    browser.driver.add_cookie({"name": "authorization", "value": re2})
     attach.add_screenshot(browser)
     attach.add_logs(browser)
     attach.add_html(browser)
