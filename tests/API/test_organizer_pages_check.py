@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from selene import have, be
 from selene.support.shared import browser
+import time
 
 from test_python_mashroom.API.utils.base_session import BaseSession
 
@@ -40,10 +41,13 @@ def test_api_token():
     print(re3)
 
 
-def test_login(demoshop_api):
-    response = demoshop_api.open('/eventor/user/181')
-    re4 = response.json()
-    print(re4)
+def test_profile(demoshop_api):
+    demoshop_api.open('/profile-settings/181')
+    demoshop_api.element('.#app > div.v-application--wrap > div:nth-child(1) > header > div > div.d-flex.align-center > span').should(have.text(os.getenv('rebob21105@cyclesat.com')))
+
+
+
+
 
 
 
