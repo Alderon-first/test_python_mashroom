@@ -13,13 +13,13 @@ load_dotenv()
 
 
 @pytest.fixture(scope="session")
-def example_api():
+def stend_api():
     return BaseSession(os.getenv('STEND_URL'))
 
 
 @pytest.fixture(scope="session")
 def demoshop_api():
-
+    '''
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
@@ -34,17 +34,17 @@ def demoshop_api():
         command_executor="https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options)
     browser.config.driver = driver
-
-    browser.config.base_url = os.getenv("API_URL")
+    '''
+    browser.config.base_url = os.getenv("STEND_URL")
     browser.config.window_width = 1920
     browser.config.window_height = 1080
-    demoshop = BaseSession(os.getenv("API_URL"))
-    resource = demoshop.post('/login', data={'Email': os.getenv('LOGIN'), 'Password': os.getenv('PASSWORD')},
-                             allow_redirects=False)
-    authorization_cookie = resource.cookies.get("NOPCOMMERCE.AUTH")
+    json_data = {"email": "rebob21105@cyclesat.com", "password": "123456789QWER"}
+    resource = BaseSession(os.getenv("STEND_URL")).post('/eventor/user/login', data=json_data)
+    authorization_cookie = resource.json()
+    print(authorization_cookie)
     browser.open("")
 
-    browser.driver.add_cookie({"name": "NOPCOMMERCE.AUTH", "value": authorization_cookie})
+    browser.driver.add_cookie({"name": "authorization", "value": authorization_cookie})
     attach.add_screenshot(browser)
     attach.add_logs(browser)
     attach.add_html(browser)
