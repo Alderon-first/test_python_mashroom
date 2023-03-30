@@ -1,8 +1,10 @@
 import os
 
 from dotenv import load_dotenv
-from selene import have
+from selene import have, be
 load_dotenv()
+import time
+from test_python_mashroom.API.utils.base_session import BaseSession
 
 
 def test_activity_page(mashroom_api):
@@ -46,4 +48,19 @@ def test_profile_page_tab_live(mashroom_api):
                          'div.col-12.col-md.mr-6.col > div > div > div.v-slide-group__wrapper > div > '
                          'div.v-tab.v-tab--active').\
         should(have.attribute('aria-selected', "true"))
+
+
+def test_profile_page_tab_activity(mashroom_api):
+    mashroom_api.open('')
+    mashroom_api.element(
+        '#app > div.v-application--wrap > main > div > div > div > div > div.row.mb-4.no-gutters > '
+        'div.col.col-auto > button > span').click()
+    mashroom_api.element("//div[@id='app']/div[3]/div/div/div[2]/span/form/div/div/span/div/div/div/div").click()
+    mashroom_api.element("//div[@id='app']/div[3]/div/div/div[2]/span/form/div/div/span/div/div/div/div/input").\
+        type("test_activity_py")
+    mashroom_api.element("//div[@id='app']/div[3]/div/div/div[2]/span/form/button/span").click()
+    mashroom_api.element(
+        '//*[@id="app"]/div/main/div/div/div/div/div/div[1]/span[1]'). \
+        should(have.text('test_activity_py'))
+
 
