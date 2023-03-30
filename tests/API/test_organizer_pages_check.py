@@ -50,7 +50,7 @@ def test_profile_page_tab_live(mashroom_api):
         should(have.attribute('aria-selected', "true"))
 
 
-def test_profile_page_tab_activity(mashroom_api):
+def test_profile_page_createactivity(mashroom_api):
     mashroom_api.open('')
     mashroom_api.element(
         '#app > div.v-application--wrap > main > div > div > div > div > div.row.mb-4.no-gutters > '
