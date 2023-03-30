@@ -40,9 +40,10 @@ def test_api_token():
     print(re3)
 
 
-
 def test_login(demoshop_api):
-    demoshop_api.open('')
+    response = demoshop_api.open('/eventor/user/181')
+    re4 = response.json()
+    print(re4)
 
 
 
