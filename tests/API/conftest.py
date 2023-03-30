@@ -43,8 +43,7 @@ def demoshop_api():
     response_body = api_request.json()
     re1 = response_body.get("tokens")
     re2 = re1.get("access")
-    print(re2)
-    heders = {"Authorization: "+ re2}
+    headers = {"authorization": re2}
     browser.open("")
 
     browser.driver.add_cookie({"name": "authorization", "value": re2})
