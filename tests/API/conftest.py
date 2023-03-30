@@ -14,7 +14,7 @@ load_dotenv()
 
 @pytest.fixture(scope="session")
 def example_api():
-    return BaseSession(os.getenv('REGRES_IN_API_BASE_URL'))
+    return BaseSession(os.getenv('STEND_URL'))
 
 
 @pytest.fixture(scope="session")
