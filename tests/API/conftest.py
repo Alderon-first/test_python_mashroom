@@ -18,7 +18,7 @@ def stend_api():
 
 
 @pytest.fixture(scope="session")
-def demoshop_api():
+def mashroom_api():
     '''
     options = Options()
     selenoid_capabilities = {
@@ -35,11 +35,11 @@ def demoshop_api():
         options=options)
     browser.config.driver = driver
     '''
-    browser.config.base_url = os.getenv("STEND_URL")
+    browser.config.base_url = os.getenv("STEND_URL_UI")
     browser.config.window_width = 1920
     browser.config.window_height = 1080
     json_data = '{"email":"rebob21105@cyclesat.com","password":"123456789QWER"}'
-    api_request = BaseSession((os.getenv("STEND_URL"))).post('/eventor/user/login', data=json_data, allow_redirects=False)
+    api_request = BaseSession((os.getenv("STEND_URL_API"))).post('/eventor/user/login', data=json_data)
     response_body = api_request.json()
     re1 = response_body.get("tokens")
     authorization_token = re1.get("access")
@@ -49,7 +49,8 @@ def demoshop_api():
     user_role = re2.get("role")
     browser.open('')
 
-    browser.driver.execute_script('return window.localStorage.setItem("authorization_token", "'+authorization_token+'");')
+    browser.driver.execute_script(
+        'return window.localStorage.setItem("authorization_token", "'+authorization_token+'");')
     browser.driver.execute_script(
         'return window.localStorage.setItem("user_id", "' + user_id + '");')
     browser.driver.execute_script(

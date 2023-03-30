@@ -1,52 +1,19 @@
-import os
-
 from dotenv import load_dotenv
-from selene import have, be
-from selene.support.shared import browser
-import time
-
-from test_python_mashroom.API.utils.base_session import BaseSession
-
+from selene import have
 load_dotenv()
-from pytest_voluptuous import S
-
-from test_python_mashroom.API.schemas.user import create_user_schema
 
 
 
-import requests
+def test_profile(mashroom_api):
+    mashroom_api.open('')
+    mashroom_api.element('//*[@id="app"]/div[1]/main/div/div/div/div/h1').\
+        should(have.text('Мои мероприятия'))
 
 
-usernameAPI = os.getenv('usernameAuth')
-passwordAPI = os.getenv('passwordAuth')
-APIURL = os.getenv('APIURL')
-
-
-headers = {
-    "Content-Type": "application/json"
-}
-
-
-json_data = '{"email":"rebob21105@cyclesat.com","password":"123456789QWER"}'
-
-
-def test_api_token():
-    api_request = BaseSession((os.getenv("STEND_URL"))).post('/eventor/user/login', data=json_data)
-    response_body = api_request.json()
-    re1 = response_body.get("tokens")
-    re2 = re1.get("access")
-    headers = {"authorization": re2}
-    request = BaseSession((os.getenv("STEND_URL"))).get('/eventor/user/181', headers=headers)
-    re3 = request.json()
-    print(re3)
-
-
-def test_profile(demoshop_api):
-    demoshop_api.open('/profile-settings/181')
-    time.sleep(30)
-    '''
-    demoshop_api.element('.#app > div.v-application--wrap > div:nth-child(1) > header > div > div.d-flex.align-center > span').should(have.text(os.getenv('rebob21105@cyclesat.com')))
-'''
+def test_profile(mashroom_api):
+    mashroom_api.open('/profile-settings/181')
+    mashroom_api.element('//*[@id="app"]/div[1]/main/div/div/div/div/div[2]/div[1]/div/div[2]/div/div[2]').\
+        should(have.text('НАСТРОЙКА ПРОФИЛЯ'))
 
 
 
