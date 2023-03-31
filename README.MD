@@ -27,3 +27,29 @@ Python, Pytest, Selene, PyCharm, Requests, Jenkins, Selenoid, Github, Telegram
   <img src="https://github.com/Yunaika/yunaika/blob/main/img/logos/Allure.svg" title="Allure Report" alt="Allure Report" width="40" height="40"/>&nbsp; 
 </div>
 <br>
+
+## Как запустить
+Перед выполением необходимо:
+* в .env определить параметры конфигурации:
+```
+STEND_URL_UI - url административного интерфейса
+STEND_URL_API - url api административного интерфейса
+STEND_URL_USER_UI - url проекта SITE интерфейса
+STEND_URL_WIDGET_UI - url проекта WIDGET интерфейса
+LOGIN - email пользователя-организатора
+PASSWORD - пароль пользователя-организатора
+```
+
+### Локально
+```
+pytest .\tests\  
+```
+
+### Удаленно
+```bash
+ls -la
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+pytest ${TESTS_FOLDER}
+```
