@@ -9,7 +9,7 @@ import selenium
 load_dotenv()
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="session")
 def browser_user_site():
 
     options = Options()
