@@ -54,22 +54,22 @@ pytest ${TESTS_FOLDER}
 ```
 
 ### Видео о прохождении тестов
-<img src="resources/3d6656547ae60edd5250624899e28f1c.mp4" alt="video test" border="0" />
+<img src="resource/3d6656547ae60edd5250624899e28f1c.mp4" alt="video test" border="0" />
 
 ### Запуск в Jenkins
 Статистика по запускам <br >
-<img src="test_python_mashroom/resources/img-1.png" alt="Статистика по запускам" border="0">
+<img src="resource/img-1.png" alt="Статистика по запускам" border="0">
 
 ### Параметры запуска <br >
 <div>
-<img src="https://github.com/Alderon-first/test_python_mashroom/tree/master/resource/img-2.png" alt="Jenkins" border="0">
+<img src="resource/img-2.png" alt="Jenkins" border="0">
 </div>
 
 ### Отчёт о прохождении автотестов в Allure Report
 <img src="resource/img-3.png" alt="Allure-Report" border="0">
 
 ### Список автотестов в Allure Report
-<img src="resources/img-4.png" alt="Allure-Report-2" border="0">
+<img src="resource/img-4.png" alt="Allure-Report-2" border="0">
 
 ### Уведомления о прохождении автотестов в Telegram
-<img src="resources/img-5.png" alt="telegram-bot" border="0">
+<img src="resource/img-5.png" alt="telegram-bot" border="0">
