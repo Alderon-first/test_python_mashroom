@@ -36,7 +36,7 @@ def browser_user_site():
     attach.add_logs(browser)
     attach.add_html(browser)
     attach.add_video(browser)
-    browser.quit()
+
 
 
 @pytest.fixture(scope="function")
@@ -66,5 +66,5 @@ def browser_user_event():
     attach.add_logs(browser)
     attach.add_html(browser)
     attach.add_video(browser)
-    browser.quit()
+
 
