@@ -61,7 +61,7 @@ pytest ${TESTS_FOLDER}
 <img src="test_python_mashroom/resources/img-1.png" alt="Статистика по запускам" border="0">
 
 ### Параметры запуска <br >
-<img src="https://github.com/Alderon-first/test_python_mashroom/resources/img-2.png" alt="Jenkins" border="0">
+<img src="https://github.com/Alderon-first/test_python_mashroom/tree/master/resource/img-2.png" alt="Jenkins" border="0">
 
 ### Отчёт о прохождении автотестов в Allure Report
 <img src="resources/img-3.png" alt="Allure-Report" border="0">
