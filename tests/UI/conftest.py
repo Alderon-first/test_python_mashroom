@@ -9,7 +9,7 @@ import selenium
 load_dotenv()
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 def browser_user_site():
 
     options = Options()
@@ -39,7 +39,7 @@ def browser_user_site():
     browser.quit()
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 def browser_user_event():
 
     options = Options()
