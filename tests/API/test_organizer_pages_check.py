@@ -26,6 +26,9 @@ def test_activity_page(mashroom_api):
     mashroom_api.element(
         '#app > div.v-application--wrap > div:nth-child(1) > header > div > div.d-flex.align-center > span'). \
         should(have.text(os.getenv("LOGIN")))
+    mashroom_api.element(
+        '//*[@id="app"]/div/main/div/div/div/div/div[2]/div/div/div/div/div[1]/table/tbody/tr/td/div/div'). \
+        should(have.text('Нажмите на кнопку "Новое мероприятие", чтобы создать мероприятие'))
 
 
 def test_profile_page(mashroom_api):
@@ -63,4 +66,13 @@ def test_profile_page_createactivity(mashroom_api):
         '//*[@id="app"]/div/main/div/div/div/div/div/div[1]/span[1]'). \
         should(have.text('test_activity_py'))
 
+
+def test_profile_page_deleteactivity(mashroom_api):
+    mashroom_api.open('')
+    mashroom_api.element(
+        '//*[@id="app"]/div[1]/main/div/div/div/div/div[2]/div/div/div/div/div[1]/table/tbody/tr/td[5]/button[3]').click()
+    mashroom_api.element('#app > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions > button:nth-child(3)').click()
+    mashroom_api.element(
+        '//*[@id="app"]/div/main/div/div/div/div/div[2]/div/div/div/div/div[1]/table/tbody/tr/td/div/div'). \
+        should(have.text('Нажмите на кнопку "Новое мероприятие", чтобы создать мероприятие'))
 
