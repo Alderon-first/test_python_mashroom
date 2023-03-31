@@ -54,7 +54,7 @@ pytest ${TESTS_FOLDER}
 ```
 
 ### Видео о прохождении тестов
-<img src="resource/3d6656547ae60edd5250624899e28f1c.mp4" alt="video test" border="0" />
+<img src="resource/3d6656547ae60edd5250624899e28f1c.gif" alt="video test" border="0" />
 
 ### Запуск в Jenkins
 Статистика по запускам <br >
