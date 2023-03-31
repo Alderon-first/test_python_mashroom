@@ -66,7 +66,7 @@ pytest ${TESTS_FOLDER}
 </div>
 
 ### Отчёт о прохождении автотестов в Allure Report
-<img src="resources/img-3.png" alt="Allure-Report" border="0">
+<img src="resource/img-3.png" alt="Allure-Report" border="0">
 
 ### Список автотестов в Allure Report
 <img src="resources/img-4.png" alt="Allure-Report-2" border="0">
