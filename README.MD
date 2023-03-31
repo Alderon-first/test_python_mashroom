@@ -61,9 +61,7 @@ pytest ${TESTS_FOLDER}
 <img src="resource/img-1.png" alt="Статистика по запускам" border="0">
 
 ### Параметры запуска <br >
-<div>
 <img src="resource/img-2.png" alt="Jenkins" border="0">
-</div>
 
 ### Отчёт о прохождении автотестов в Allure Report
 <img src="resource/img-3.png" alt="Allure-Report" border="0">
