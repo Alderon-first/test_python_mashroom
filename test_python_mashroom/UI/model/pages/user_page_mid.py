@@ -50,3 +50,17 @@ class UserPage:
             have.texts(user.first_name))
         browser.all('//*[@id="pml-widget-fullscreen-wrapper"]/div[2]/div/div/div[2]/div/div/div/div[1]').should(
             have.texts(user.message))
+
+'''
+from test_python_mashroom.UI.model.pages.user_page_mid import UserPage
+
+user_page = UserPage()
+
+
+def test_user_page_mid():
+
+    user_page.open_user_page_only_chat()
+    user_page.open_chat_reg()
+    user_page.send_message()
+    user_page.chek_message()
+    '''
