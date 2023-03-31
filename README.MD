@@ -47,9 +47,27 @@ pytest .\tests\
 
 ### Удаленно
 ```bash
-ls -la
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 pytest ${TESTS_FOLDER}
 ```
+
+### Видео о прохождении тестов
+<img src="resources/3d6656547ae60edd5250624899e28f1c.mp4" alt="video test" border="0" />
+
+### Запуск в Jenkins
+Статистика по запускам <br >
+<img src="resources/img-1.png" alt="Статистика по запускам" border="0">
+
+### Параметры запуска <br >
+<img src="resources/img-2.png" alt="Jenkins" border="0">
+
+### Отчёт о прохождении автотестов в Allure Report
+<img src="resources/img-3.png" alt="Allure-Report" border="0">
+
+### Список автотестов в Allure Report
+<img src="resources/img-4.png" alt="Allure-Report-2" border="0">
+
+### Уведомления о прохождении автотестов в Telegram
+<img src="resources/img-5.png" alt="telegram-bot" border="0">
