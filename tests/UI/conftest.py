@@ -3,6 +3,8 @@ import pytest
 from test_python_mashroom.UI.utils import attach
 from selene.support.shared import browser
 from dotenv import load_dotenv
+from selenium.webdriver.chrome.options import Options
+import selenium
 
 load_dotenv()
 

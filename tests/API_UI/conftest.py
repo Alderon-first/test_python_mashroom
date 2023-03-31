@@ -5,13 +5,15 @@ from dotenv import load_dotenv
 from selene.support.shared import browser
 from test_python_mashroom.UI.utils import attach
 from test_python_mashroom.API.utils.base_session import BaseSession
+from selenium.webdriver.chrome.options import Options
+import selenium
 
 load_dotenv()
 
 
 @pytest.fixture(scope="session")
 def mashroom_api():
-    '''
+
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
@@ -26,7 +28,7 @@ def mashroom_api():
         command_executor="https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options)
     browser.config.driver = driver
-    '''
+
     browser.config.base_url = os.getenv("STEND_URL_UI")
     browser.config.window_width = 1920
     browser.config.window_height = 1080
