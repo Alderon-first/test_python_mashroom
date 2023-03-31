@@ -58,7 +58,7 @@ pytest ${TESTS_FOLDER}
 
 ### Запуск в Jenkins
 Статистика по запускам <br >
-<img src="resources/img-1.png" alt="Статистика по запускам" border="0">
+<img src="test_python_mashroom/resources/img-1.png" alt="Статистика по запускам" border="0">
 
 ### Параметры запуска <br >
 <img src="resources/img-2.png" alt="Jenkins" border="0">
