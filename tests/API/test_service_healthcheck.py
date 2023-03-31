@@ -2,7 +2,6 @@ import json
 import allure
 
 
-
 @allure.tag("api")
 def test_viewer_healthcheck(stend_api):
     response = stend_api.get("/viewer/health")

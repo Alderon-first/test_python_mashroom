@@ -37,7 +37,7 @@ def test_profile_page(mashroom_api):
 
 
 def test_profile_page_tab_arch(mashroom_api):
-    mashroom_api.open('https://event-admin-demo.pikemedia.live/?tab=1')
+    mashroom_api.open('/?tab=1')
     mashroom_api.element('#app > div.v-application--wrap > main > div > div > div > div > div.row.mb-4.no-gutters > '
                          'div.col-12.col-md.mr-6.col > div > div > div.v-slide-group__wrapper > div > '
                          'div.v-tab.v-tab--active').\
@@ -45,7 +45,7 @@ def test_profile_page_tab_arch(mashroom_api):
 
 
 def test_profile_page_tab_live(mashroom_api):
-    mashroom_api.open('https://event-admin-demo.pikemedia.live/?tab=0')
+    mashroom_api.open('/?tab=0')
     mashroom_api.element('#app > div.v-application--wrap > main > div > div > div > div > div.row.mb-4.no-gutters > '
                          'div.col-12.col-md.mr-6.col > div > div > div.v-slide-group__wrapper > div > '
                          'div.v-tab.v-tab--active').\
