@@ -1,14 +1,14 @@
 # Автотесты для проекта pikemedia.live
 
-* API- Проверки доступности сервисов проекра
+API- Проверки доступности сервисов проекра
 ✅ poll
 ✅ eventor
 ✅ chat
 ✅ viewer
-* API_UI Проверки страниц, требующих авторризации пользователя
+API_UI Проверки страниц, требующих авторризации пользователя
 ✅ CRUD мероприятия
 ✅ Просмотр страниц административного интерфейса
-* UI Провнерки страниц, доступных для неавторизованного пользователя:
+UI Провнерки страниц, доступных для неавторизованного пользователя:
 ✅ Просмотр тестовой страницы
 ✅ Просмотр страницы "мероприятие не найдено"
 
@@ -61,7 +61,9 @@ pytest ${TESTS_FOLDER}
 <img src="test_python_mashroom/resources/img-1.png" alt="Статистика по запускам" border="0">
 
 ### Параметры запуска <br >
+<div>
 <img src="https://github.com/Alderon-first/test_python_mashroom/tree/master/resource/img-2.png" alt="Jenkins" border="0">
+</div>
 
 ### Отчёт о прохождении автотестов в Allure Report
 <img src="resources/img-3.png" alt="Allure-Report" border="0">
