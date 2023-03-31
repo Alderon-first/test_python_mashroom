@@ -14,21 +14,16 @@
 
 
 ## Технологический стек
-Python, Pytest, Selene, PyCharm, Requests, Appium, Jenkins, Selenoid, Allure TestOps, Jira, Github, Telegram
+Python, Pytest, Selene, PyCharm, Requests, Jenkins, Selenoid, Github, Telegram
 
 <p  align="left">
-<code>
-  <img src="resources/python.png" width="40" height="40"  alt="Python"/>
-  <img src="resources/pytest.png" width="40" height="40"  alt="Pytest"/>
-  <img src="resources/selene.png" width="50" height="40"  alt="Selene"/>
-  <img src="resources/pysharm.png" width="40" height="40"  alt="PyCharm"/>
-  <img src="resources/request.png" width="50" height="40"  alt="Requests"/>
-  <img src="resources/appium.png" width="40" height="40"  alt="Appium"/>
-  <img src="resources/Jenkins.jpg" width="40" height="40"  alt="Jenkins"/>
-  <img src="resources/selenoid.png" width="40" height="40"  alt="Selenoid"/>
-  <img src="resources/allure.jpg" width="40" height="40"  alt="Allure TestOps"/>
-  <img src="resources/Jira.png" width="40" height="40"  alt="Jira"/>
-  <img src="resources/Github.png" width="40" height="40"  alt="Github"/>
-  <img src="resources/telegram-logo.png" width="40" height="40"  alt="Telegram"/>
-</code>
-</p>
+<div>
+  <img src="https://github.com/Yunaika/yunaika/blob/main/img/logos/python.webp" title="Python" alt="Python" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/Yunaika/yunaika/blob/main/img/logos/pytest.png" title="Pytest" alt="Pytest" width="45" height="45"/>&nbsp; 
+  <img src="https://github.com/Yunaika/yunaika/blob/main/img/logos/selenium-original.svg" title="Selenium" alt="Selenium" width="40" height="40"/>&nbsp;  
+  <img src="https://github.com/Yunaika/yunaika/blob/main/img/logos/selene.png" title="Selene" alt="Selene" width="50" height="50"/>&nbsp; 
+  <img src="https://github.com/Yunaika/yunaika/blob/main/img/logos/pycharm.png" title="PyCharm" alt="PyCharm" width="40" height="40"/>&nbsp;    
+  <img src="https://github.com/Yunaika/yunaika/blob/main/img/logos/jenkins.png" title="Jenkins" alt="Jenkins" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/Yunaika/yunaika/blob/main/img/logos/Allure.svg" title="Allure Report" alt="Allure Report" width="40" height="40"/>&nbsp; 
+</div>
+<br>
