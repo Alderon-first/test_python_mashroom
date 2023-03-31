@@ -4,6 +4,7 @@ import pytest
 from dotenv import load_dotenv
 from test_python_mashroom.API.utils.base_session import BaseSession
 from selenium.webdriver.chrome.options import Options
+from selene.support.shared import browser
 import selenium
 
 load_dotenv()
