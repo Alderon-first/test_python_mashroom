@@ -1,14 +1,14 @@
 # Автотесты для проекта pikemedia.live
 
-* API- Проверки доступности сервисов проекра
+* API- Проверки доступности сервисов проекта
   * ✅ poll
   * ✅ eventor
   * ✅ chat
   * ✅ viewer
-* API_UI Проверки страниц, требующих авторризации пользователя
+* API_UI Проверки страниц, требующих авторизации пользователя
   * ✅ CRUD мероприятия
   * ✅ Просмотр страниц административного интерфейса
-* UI Провнерки страниц, доступных для неавторизованного пользователя:
+* UI Проверки страниц, доступных для неавторизованного пользователя:
   * ✅ Просмотр тестовой страницы
   * ✅ Просмотр страницы "мероприятие не найдено"
 
@@ -29,7 +29,7 @@ Python, Pytest, Selene, PyCharm, Requests, Jenkins, Selenoid, Github, Telegram
 <br>
 
 ## Как запустить
-Перед выполением необходимо:
+Перед выполнением необходимо:
 * в .env определить параметры конфигурации:
 ```
 STEND_URL_UI - url административного интерфейса
@@ -57,13 +57,19 @@ pytest ${TESTS_FOLDER}
 <img src="resource/3d6656547ae60edd5250624899e28f1c.gif" alt="video test" border="0">
 
 ### Запуск в Jenkins
+Ссылка на пример сборки: https://jenkins.autotests.cloud/job/ushko_test_python_mashroom_dip/
 Статистика по запускам <br >
 <img src="resource/img-1.png" alt="Статистика по запускам" border="0">
 
 ### Параметры запуска <br >
+* .\tests\  - запустить все тесты в директории tests (в проекте).
+* .\tests\UI  - запустить все тесты в директории tests/UI. Эти тесты используют только интерфейс UI.
+* .\tests\API - запустить все тесты в директории tests/API. Эти тесты используют только интерфейс API.
+* .\tests\API_UI  - запустить все тесты в директории tests/API_UI. Эти тесты используют задействую оба интерфейса: API и UI.
 <img src="resource/img-2.png" alt="Jenkins" border="0">
 
 ### Отчёт о прохождении автотестов в Allure Report
+Ссылка на пример отчета: https://jenkins.autotests.cloud/job/ushko_test_python_mashroom_dip/2/allure
 <img src="resource/img-3.png" alt="Allure-Report" border="0">
 
 ### Список автотестов в Allure Report
