@@ -23,10 +23,10 @@ class UserPage:
         browser.element(
             "//div[@id='pml-widget-app']/div[3]/div/div/div[2]/span/form/div/div/span/div/div/div/div").click()
         browser.element(
-            '/html/body/vue-widget/div/div[3]/div/div/div[2]/span/form/div[1]/div/span/div/div/div[1]/div/input').\
+            '/html/body/vue-widget/div/div[3]/div/div/div[2]/span/form/div[1]/div/span/div/div/div[1]/div/input'). \
             clear()
         browser.element(
-            '/html/body/vue-widget/div/div[3]/div/div/div[2]/span/form/div[1]/div/span/div/div/div[1]/div/input').\
+            '/html/body/vue-widget/div/div[3]/div/div/div[2]/span/form/div[1]/div/span/div/div/div[1]/div/input'). \
             should(
             be.blank).type(user.first_name)
         browser.element('/html/body/vue-widget/div/div[3]/div/div/div[2]/span/form/button').click()
@@ -50,17 +50,3 @@ class UserPage:
             have.texts(user.first_name))
         browser.all('//*[@id="pml-widget-fullscreen-wrapper"]/div[2]/div/div/div[2]/div/div/div/div[1]').should(
             have.texts(user.message))
-
-'''
-from test_python_mashroom.UI.model.pages.user_page_mid import UserPage
-
-user_page = UserPage()
-
-
-def test_user_page_mid():
-
-    user_page.open_user_page_only_chat()
-    user_page.open_chat_reg()
-    user_page.send_message()
-    user_page.chek_message()
-    '''

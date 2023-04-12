@@ -13,7 +13,6 @@ load_dotenv()
 
 @pytest.fixture(scope="function")
 def mashroom_api():
-
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
@@ -70,8 +69,10 @@ def browser_user_event():
         }
     }
     options.capabilities.update(selenoid_capabilities)
+    login = os.getenv('SELENOID_LOGIN')
+    password = os.getenv('SELENOID_PASSWORD')
     driver = selenium.webdriver.Remote(
-        command_executor="https://user1:1234@selenoid.autotests.cloud/wd/hub",
+        command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
         options=options)
     browser.config.driver = driver
     browser.config.base_url = os.getenv("STEND_URL_USER_UI")
