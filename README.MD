@@ -38,6 +38,8 @@ STEND_URL_USER_UI - url проекта SITE интерфейса
 STEND_URL_WIDGET_UI - url проекта WIDGET интерфейса
 LOGIN - email пользователя-организатора
 PASSWORD - пароль пользователя-организатора
+SELENOID_LOGIN - логн от SELENOID
+SELENOID_PASSWORD - пароль от SELENOID
 ```
 
 ### Локально
