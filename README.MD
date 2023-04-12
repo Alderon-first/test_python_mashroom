@@ -61,7 +61,7 @@ pytest ${TESTS_FOLDER}
 1. Авторизация
 2. Создание объекта "мероприятие"
 3. Проверка значения имени, присвоенного объекту на странице созданного мероприятия
-<img src="resource/test_vid.gif" alt="video test" border="0">
+<img src="resource/test_VID.gif" alt="video test" border="0">
 
 ### Запуск в Jenkins
 Ссылка на пример сборки: https://jenkins.autotests.cloud/job/ushko_test_python_mashroom_dip/
