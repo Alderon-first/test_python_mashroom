@@ -65,7 +65,8 @@ pytest ${TESTS_FOLDER}
 
 ### Запуск в Jenkins
 Ссылка на пример сборки: https://jenkins.autotests.cloud/job/ushko_test_python_mashroom_dip/
-Статистика по запускам <br >
+
+### Статистика по запускам <br >
 <img src="resource/img-1.png" alt="Статистика по запускам" border="0">
 
 ### Параметры запуска <br >
