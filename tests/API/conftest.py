@@ -1,11 +1,12 @@
 import os
 
 import pytest
-from dotenv import load_dotenv
-from test_python_mashroom.API.utils.base_session import BaseSession
-from selenium.webdriver.chrome.options import Options
-from selene.support.shared import browser
 import selenium
+from dotenv import load_dotenv
+from selene.support.shared import browser
+from selenium.webdriver.chrome.options import Options
+
+from test_python_mashroom.API.utils.base_session import BaseSession
 
 load_dotenv()
 
@@ -28,6 +29,3 @@ def stend_api():
     browser.config.driver = driver
 
     return BaseSession(os.getenv('STEND_URL_API'))
-
-
-

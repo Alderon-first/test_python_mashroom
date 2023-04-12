@@ -54,7 +54,13 @@ pytest ${TESTS_FOLDER}
 ```
 
 ### Видео о прохождении тестов
-<img src="resource/3d6656547ae60edd5250624899e28f1c.gif" alt="video test" border="0">
+В видео представлен тест test_profile_page_createactivity из группы тестов API_UI.
+Тест выполняет последовательно действия:
+1. Авторизация
+2. Создание объекта "мероприятие"
+3. Проверка значения имени, присвоенного объекту на странице созданного мероприятия
+
+<img src="resource/test_vid.gif" alt="video test" border="0">
 
 ### Запуск в Jenkins
 Ссылка на пример сборки: https://jenkins.autotests.cloud/job/ushko_test_python_mashroom_dip/

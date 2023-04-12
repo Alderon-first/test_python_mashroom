@@ -1,17 +1,18 @@
 import os
+
 import pytest
-from test_python_mashroom.UI.utils import attach
-from selene.support.shared import browser
-from dotenv import load_dotenv
-from selenium.webdriver.chrome.options import Options
 import selenium
+from dotenv import load_dotenv
+from selene.support.shared import browser
+from selenium.webdriver.chrome.options import Options
+
+from test_python_mashroom.UI.utils import attach
 
 load_dotenv()
 
 
 @pytest.fixture(scope="function")
 def browser_user_site():
-
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
@@ -22,8 +23,10 @@ def browser_user_site():
         }
     }
     options.capabilities.update(selenoid_capabilities)
+    login = os.getenv('SELENOID_LOGIN')
+    password = os.getenv('SELENOID_PASSWORD')
     driver = selenium.webdriver.Remote(
-        command_executor="https://user1:1234@selenoid.autotests.cloud/wd/hub",
+        command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
         options=options)
     browser.config.driver = driver
 
@@ -38,10 +41,8 @@ def browser_user_site():
     attach.add_video(browser)
 
 
-
 @pytest.fixture(scope="function")
 def browser_user_event():
-
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
@@ -52,8 +53,10 @@ def browser_user_event():
         }
     }
     options.capabilities.update(selenoid_capabilities)
+    login = os.getenv('SELENOID_LOGIN')
+    password = os.getenv('SELENOID_PASSWORD')
     driver = selenium.webdriver.Remote(
-        command_executor="https://user1:1234@selenoid.autotests.cloud/wd/hub",
+        command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
         options=options)
     browser.config.driver = driver
 
@@ -66,5 +69,3 @@ def browser_user_event():
     attach.add_logs(browser)
     attach.add_html(browser)
     attach.add_video(browser)
-
-
