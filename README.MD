@@ -77,7 +77,7 @@ pytest ${TESTS_FOLDER}
 <img src="resource/img-2.png" alt="Jenkins" border="0">
 
 ### Отчёт о прохождении автотестов в Allure Report
-Ссылка на пример отчета: https://jenkins.autotests.cloud/job/ushko_test_python_mashroom_dip/2/allure
+Ссылка на пример отчета: https://jenkins.autotests.cloud/job/ushko_test_python_mashroom_dip/7/allure/
 <img src="resource/img-3.png" alt="Allure-Report" border="0">
 
 ### Список автотестов в Allure Report
